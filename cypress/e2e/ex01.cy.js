@@ -31,4 +31,3 @@ describe("Login with invalid credentials", () => {
     cy.contains("p", "Falha no login. Consulte suas credenciais.");
   });
 });
-describe("View home page and navigate home button", () => {});
