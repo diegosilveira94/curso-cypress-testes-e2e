@@ -1,6 +1,9 @@
 describe("Load home page and register new user", () => {
-  it("Should load the home page", () => {
+  beforeEach(() => {
     cy.visit("https://adopet-frontend-cypress.vercel.app");
+  });
+  it("Should load the home page", () => {
+    cy.get('h3:contains("Boas-vindas!")').should("exist");
   });
   it("Should register a new user", () => {
     cy.visit("https://adopet-frontend-cypress.vercel.app");

@@ -1,10 +1,14 @@
 describe("Página de Cadastro", () => {
-  it("Preencher os campos do formulário incorretamente e exibir mensagens ao usuário", () => {
+  beforeEach(() => {
     cy.visit("https://adopet-frontend-cypress.vercel.app");
     cy.get('[data-test="register-button"]').click();
+  });
+  it("Preencher os campos do formulário incorretamente e exibir mensagens ao usuário", () => {
     cy.get('[data-test="submit-button"]').click();
-    cy.contains("É necessário informar um endereço de email");
-    cy.contains("Crie uma senha");
-    cy.contains("Repita a senha criada acima");
+    cy.contains("É necessário informar um endereço de email").should(
+      "be.visible"
+    );
+    cy.contains("Crie uma senha").should("be.visible");
+    cy.contains("Repita a senha criada acima").should("be.visible");
   });
 });

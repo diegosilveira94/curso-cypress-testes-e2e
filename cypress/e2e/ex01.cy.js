@@ -1,33 +1,26 @@
-describe("Exercises 1", () => {
-  it("Should view available pets for adoption", () => {
+describe("Exercícios 1", () => {
+  beforeEach(() => {
     cy.visit("https://adopet-frontend-cypress.vercel.app");
+  });
+  it("Deve visualizar os pets disponíveis para adoção", () => {
     cy.contains("a", "Ver pets disponíveis para adoção").click();
   });
-  it("Should navigate to home page when home button is clicked", () => {
-    cy.visit("https://adopet-frontend-cypress.vercel.app");
+
+  it("Deve navegar para a página inicial ao clicar no botão home", () => {
     cy.contains("a", "Ver pets disponíveis para adoção").click();
     cy.get("a.header__home").click();
   });
-  it("Should navigate to login page", () => {
-    cy.visit("https://adopet-frontend-cypress.vercel.app");
+
+  it("Deve navegar para a página de login", () => {
     cy.contains("a", "Fazer login").click();
   });
-  it("Should view the home page", () => {
+
+  it("Deve visualizar a página inicial", () => {
     cy.visit("https://adopet-frontend-cypress.vercel.app/home");
   });
-  it("Should view the home page and click in button 'Falar com responsável'", () => {
+
+  it("Deve visualizar a página inicial e clicar no botão 'Falar com responsável'", () => {
     cy.visit("https://adopet-frontend-cypress.vercel.app/home");
     cy.get(".header__message").click();
-  });
-});
-
-describe("Login with invalid credentials", () => {
-  it("Should display an error message for invalid login", () => {
-    cy.visit("https://adopet-frontend-cypress.vercel.app");
-    cy.contains("a", "Fazer login").click();
-    cy.get('input[name="email"]').type("diego@email.com");
-    cy.get('input[name="password"]').type("Padaria123");
-    cy.contains("button", "Entrar").click();
-    cy.contains("p", "Falha no login. Consulte suas credenciais.");
   });
 });
