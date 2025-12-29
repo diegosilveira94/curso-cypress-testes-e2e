@@ -13,14 +13,14 @@ Este repositório contém testes automatizados para validar funcionalidades de l
 1. Clone o repositório:
 
 ```bash
-git clone <seu-repositorio>
+git clone https://github.com/diegosilveira94/curso-cypress-testes-e2e.git
 cd cypress_automatizando_testes_e2e
 ```
 
 2. Instale as dependências:
 
 ```bash
-npm install
+yarn
 ```
 
 ## 📝 Scripts Disponíveis
@@ -28,7 +28,7 @@ npm install
 - **Abrir Cypress UI:**
 
 ```bash
-npm run cy:open
+yarn cypress open
 ```
 
 ## 🧪 Testes Disponíveis
